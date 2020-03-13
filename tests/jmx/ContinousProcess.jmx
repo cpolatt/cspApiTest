@@ -1,0 +1,2688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="ContinuousProcess" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.14. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">test.bimser.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+        <collectionProp name="DNSCacheManager.hosts"/>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
+          <stringProp name="TestPlan.comments">Kullanıcı akışı onaylar ve bitirir.</stringProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetLoginParameters" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;DomainAddress&quot;:&quot;http://test.bimser.net&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/Login/GetLoginParameters</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.9,tr;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">BimserEncryptedData</stringProp>
+              <stringProp name="RegexExtractor.regex">Bimser-Encrypted-Data:\s+(.+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">2000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;language&quot;:&quot;tr-TR&quot;,&quot;username&quot;:&quot;adogru&quot;,&quot;password&quot;:&quot;0&quot;,&quot;rememberMe&quot;:false}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/Login/Login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value"></stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="token" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">token</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.token</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">BimserEncryptedData2</stringProp>
+              <stringProp name="RegexExtractor.regex">Bimser-Encrypted-Data:\s+(.+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetUserStartupInfo" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/UserStartup/GetUserStartupInfo</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetUserSettingParameters" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/UserStartup/GetUserSettingParameters</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetAllAnnouncements" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;loadOptions&quot;:{&quot;pagination&quot;:{&quot;skip&quot;:0,&quot;take&quot;:10}}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/Announcement/GetAllAnnouncements</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetApprovals" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;project&quot;:&quot;&quot;,&quot;skip&quot;:1,&quot;take&quot;:20}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/workflowManagement/GetApprovals</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetApprovalCount" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;project&quot;:&quot;&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/workflowManagement/GetApprovalCount</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetRecentObjects" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/DocumentManagement/Explorer/GetRecentObjects</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetUserMenuStructure" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/MenuManager/GetUserMenuStructure</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="clientUrl" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">clientUrl</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result..parameters[?(@.projectName==&quot;ApiTest&quot;)].clientUrl</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="flowName" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">flowName</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result..parameters[?(@.projectName==&quot;ApiTest&quot;)].flowName</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetProjects" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">api/web/workflowManagement/GetProjects</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetApprovals" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;skip&quot;:0,&quot;take&quot;:30}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/GetApprovals</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="requestid" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">requestid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result[0].processRequestId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="processid" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">processid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result[0].processId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetFlowVariables" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/GetFlowVariables</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="StartParameters" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/StartParameters</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="formName" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">formName</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.documentOptions.Document1.documentOptions.formName</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="flowVersion" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">flowVersion</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.flowVersion</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetProcessRequestDocuments" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;requestId&quot;:${requestid_1}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/GetProcessRequestDocuments</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="documentid" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">documentid</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result[0].documentId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;url&quot;:&quot;${clientUrl_1}&quot;,&quot;formName&quot;:&quot;${formName_1}&quot;,&quot;documentId&quot;:${documentid_1}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${formName_1}/Create</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Connection</stringProp>
+                  <stringProp name="Header.value">keep-alive</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="formState" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">formState</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.form.data.entities.items.Form1.properties.formState</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="TokenId" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">TokenId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.form.data.entities.items.Form1.properties.session.TokenId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="EncryptedData" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">EncryptedData</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.form.data.entities.items.Form1.properties.session.EncryptedData</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="formStateData" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">formStateData</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">result.form.data.entities.items.Form1.properties.formStateData</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SaveAndContinue" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;flowId&quot;: &quot;898156dc-e8ad-41f7-93db-a2b66ac59e0f&quot;,&#xd;
+  &quot;flowVersion&quot;: ${flowVersion_1},&#xd;
+  &quot;processId&quot;: ${processid_1},&#xd;
+  &quot;data&quot;: {&#xd;
+    &quot;requestId&quot;: ${requestid_1},&#xd;
+    &quot;documents&quot;: [&#xd;
+      {&#xd;
+        &quot;formName&quot;: &quot;Form1&quot;,&#xd;
+        &quot;documentId&quot;: ${documentid_1},&#xd;
+        &quot;formPanelId&quot;: &quot;ed822f06-6aae-e8a9-9ddd-d54951d45255_Document1&quot;&#xd;
+      }&#xd;
+    ],&#xd;
+    &quot;event&quot;: {&#xd;
+      &quot;id&quot;: 5,&#xd;
+      &quot;description&quot;: &quot;Approve&quot;,&#xd;
+      &quot;default&quot;: false,&#xd;
+      &quot;reason&quot;: false,&#xd;
+      &quot;validate&quot;: false,&#xd;
+      &quot;form&quot;: &quot;&quot;,&#xd;
+      &quot;color&quot;: null,&#xd;
+      &quot;icon&quot;: &quot;event-approve&quot;,&#xd;
+      &quot;enable&quot;: true,&#xd;
+      &quot;system&quot;: true,&#xd;
+      &quot;confirm&quot;: false,&#xd;
+      &quot;visible&quot;: true,&#xd;
+      &quot;digitalSignatureRequired&quot;: false&#xd;
+    },&#xd;
+    &quot;reasons&quot;: [&#xd;
+      &#xd;
+    ]&#xd;
+  },&#xd;
+  &quot;effectiveDate&quot;: &quot;2019-07-29T05:22:04.161Z&quot;,&#xd;
+  &quot;saveParameters&quot;: [&#xd;
+    {&#xd;
+      &quot;formName&quot;: &quot;Form1&quot;,&#xd;
+      &quot;saveParameters&quot;: {&#xd;
+        &quot;form&quot;: {&#xd;
+          &quot;data&quot;: {&#xd;
+            &quot;entities&quot;: {&#xd;
+              &quot;items&quot;: {&#xd;
+                &quot;Row18&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row18&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column18&quot;,&#xd;
+                    &quot;Column20&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row19&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row19&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column19&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;ListBox1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;items&quot;: [&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;2fe6af9a-20c2-54f5-783c-e6eee4fd8f78&quot;,&#xd;
+                        &quot;value&quot;: &quot;1&quot;,&#xd;
+                        &quot;text&quot;: &quot;Ä°stanbul&quot;,&#xd;
+                        &quot;selected&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;a7924a37-da0e-6876-2506-80b1025fa3fa&quot;,&#xd;
+                        &quot;value&quot;: &quot;2&quot;,&#xd;
+                        &quot;text&quot;: &quot;Ankara&quot;,&#xd;
+                        &quot;selected&quot;: true&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;ff343501-4cc6-93fc-197b-cb559a47c39f&quot;,&#xd;
+                        &quot;value&quot;: &quot;3&quot;,&#xd;
+                        &quot;text&quot;: &quot;Ä°zmir&quot;,&#xd;
+                        &quot;selected&quot;: false&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;dataSource&quot;: {&#xd;
+                      &quot;name&quot;: &quot;&quot;,&#xd;
+                      &quot;valueExpr&quot;: &quot;&quot;,&#xd;
+                      &quot;displayExpr&quot;: [&#xd;
+                        &#xd;
+                      ],&#xd;
+                      &quot;displayFormat&quot;: &quot;&quot;,&#xd;
+                      &quot;runAtServer&quot;: false,&#xd;
+                      &quot;parameters&quot;: [&#xd;
+                        &#xd;
+                      ]&#xd;
+                    },&#xd;
+                    &quot;showSearch&quot;: false,&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;ListBox1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;ListBox1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;SL.ListBox1&quot;,&#xd;
+                    &quot;valueType&quot;: &quot;string&quot;,&#xd;
+                    &quot;name&quot;: &quot;ListBox1&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;valueSeparator&quot;: &quot;,&quot;,&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;ListBox&quot;,&#xd;
+                    &quot;textSeparator&quot;: &quot;,&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;dd0aa981-775c-2d18-050c-b95e8e9b45f9&quot;,&#xd;
+                    &quot;allowSelectAll&quot;: false,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0,&#xd;
+                    &quot;dataSourceType&quot;: &quot;static&quot;,&#xd;
+                    &quot;direction&quot;: &quot;vertical&quot;&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;ListBox1&quot;,&#xd;
+                  &quot;type&quot;: &quot;ListBox&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column12&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;DateTimePicker1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;showToday&quot;: false,&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;DateTimePicker1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;DateTimePicker1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;DateTimePicker1&quot;,&#xd;
+                    &quot;showTime&quot;: false,&#xd;
+                    &quot;name&quot;: &quot;DateTimePicker1&quot;,&#xd;
+                    &quot;text&quot;: &quot;3/6/20 1:15:13 PM +00:00&quot;,&#xd;
+                    &quot;setTodayAsDefault&quot;: false,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;value&quot;: &quot;2020-03-06T13:15:13+00:00&quot;,&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;placeholder&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;DateTimePicker&quot;,&#xd;
+                    &quot;format&quot;: &quot;YYYY-MM-DD&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;d0301886-c37b-a428-1207-3402f08e0843&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;DateTimePicker1&quot;,&#xd;
+                  &quot;type&quot;: &quot;DateTimePicker&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column18&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Form1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;statuses&quot;: [&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 0,&#xd;
+                        &quot;description&quot;: &quot;Default&quot;,&#xd;
+                        &quot;status&quot;: &quot;default&quot;,&#xd;
+                        &quot;icon&quot;: &quot;blank.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 1,&#xd;
+                        &quot;description&quot;: &quot;Approve&quot;,&#xd;
+                        &quot;status&quot;: &quot;approve&quot;,&#xd;
+                        &quot;icon&quot;: &quot;approve.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 2,&#xd;
+                        &quot;description&quot;: &quot;Reject&quot;,&#xd;
+                        &quot;status&quot;: &quot;reject&quot;,&#xd;
+                        &quot;icon&quot;: &quot;reject.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 3,&#xd;
+                        &quot;description&quot;: &quot;Cancel&quot;,&#xd;
+                        &quot;status&quot;: &quot;cancel&quot;,&#xd;
+                        &quot;icon&quot;: &quot;reject.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 4,&#xd;
+                        &quot;description&quot;: &quot;Timeout&quot;,&#xd;
+                        &quot;status&quot;: &quot;timeout&quot;,&#xd;
+                        &quot;icon&quot;: &quot;reject.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 5,&#xd;
+                        &quot;description&quot;: &quot;Invalid&quot;,&#xd;
+                        &quot;status&quot;: &quot;invalid&quot;,&#xd;
+                        &quot;icon&quot;: &quot;reject.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 6,&#xd;
+                        &quot;description&quot;: &quot;Draft&quot;,&#xd;
+                        &quot;status&quot;: &quot;draft&quot;,&#xd;
+                        &quot;icon&quot;: &quot;draft.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 7,&#xd;
+                        &quot;description&quot;: &quot;Create&quot;,&#xd;
+                        &quot;status&quot;: &quot;create&quot;,&#xd;
+                        &quot;icon&quot;: &quot;draft.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;id&quot;: 8,&#xd;
+                        &quot;description&quot;: &quot;Custom&quot;,&#xd;
+                        &quot;status&quot;: &quot;custom&quot;,&#xd;
+                        &quot;icon&quot;: &quot;custom.png&quot;,&#xd;
+                        &quot;flowView&quot;: false&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;customState&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;publicFields&quot;: [&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;FORMCAPTION&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Form Caption&quot;,&#xd;
+                        &quot;visible&quot;: true,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;DOCUMENTID&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Document Id&quot;,&#xd;
+                        &quot;visible&quot;: true,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;STATUSTEXT&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Status&quot;,&#xd;
+                        &quot;visible&quot;: true,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;CREATOR&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Creator&quot;,&#xd;
+                        &quot;visible&quot;: true,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;CREATEDATE&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Create Date&quot;,&#xd;
+                        &quot;visible&quot;: true,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;STATUS&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Status Id&quot;,&#xd;
+                        &quot;visible&quot;: false,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;field&quot;: &quot;ID&quot;,&#xd;
+                        &quot;caption&quot;: &quot;Global Id&quot;,&#xd;
+                        &quot;visible&quot;: false,&#xd;
+                        &quot;displayFormat&quot;: &quot;&quot;&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;copyPasteEnabled&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;top&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;toolbarButtons&quot;: [&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;toolbarSaveButton&quot;,&#xd;
+                        &quot;name&quot;: &quot;Kaydet&quot;,&#xd;
+                        &quot;icon&quot;: &quot;save&quot;,&#xd;
+                        &quot;enabled&quot;: true&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: null,&#xd;
+                    &quot;responseParameters&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;name&quot;: &quot;Form1&quot;,&#xd;
+                    &quot;activeView&quot;: &quot;default&quot;,&#xd;
+                    &quot;messages&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;isFirstLoad&quot;: false,&#xd;
+                    &quot;printingEnabled&quot;: false,&#xd;
+                    &quot;validationSummary&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;text&quot;: {&#xd;
+                      &quot;tr-TR&quot;: &quot;Form1&quot;&#xd;
+                    },&#xd;
+                    &quot;formState&quot;: &quot;${formState_1}&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;rgba(255, 255, 255, 1)&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;printView&quot;: &quot;default&quot;,&#xd;
+                    &quot;identityFormat&quot;: &quot;&lt;u&gt;&quot;,&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;session&quot;: {&#xd;
+                      &quot;Instance&quot;: &quot;test&quot;,&#xd;
+                      &quot;TokenId&quot;: &quot;${TokenId_1}&quot;,&#xd;
+                      &quot;Token&quot;: &quot;${token_1}&quot;,&#xd;
+                      &quot;EncryptedData&quot;: &quot;${EncryptedData_1}&quot;,&#xd;
+                      &quot;Language&quot;: &quot;tr-TR&quot;,&#xd;
+                      &quot;User&quot;: {&#xd;
+                        &quot;Id&quot;: 8,&#xd;
+                        &quot;Name&quot;: &quot;adogru&quot;,&#xd;
+                        &quot;InternalName&quot;: &quot;adogru&quot;,&#xd;
+                        &quot;FirstName&quot;: &quot;Ali&quot;,&#xd;
+                        &quot;LastName&quot;: &quot;Dogru&quot;,&#xd;
+                        &quot;Email&quot;: &quot;eba3@eba.net&quot;,&#xd;
+                        &quot;PositionId&quot;: 1,&#xd;
+                        &quot;Position&quot;: &quot;Destek UzmanÄ±&quot;,&#xd;
+                        &quot;ProfessionId&quot;: 81,&#xd;
+                        &quot;Profession&quot;: &quot;Sekreter&quot;,&#xd;
+                        &quot;DepartmentId&quot;: 21,&#xd;
+                        &quot;Department&quot;: &quot;Idari Isler Departmani&quot;&#xd;
+                      }&#xd;
+                    },&#xd;
+                    &quot;rules&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlType&quot;: &quot;Form&quot;,&#xd;
+                    &quot;formStateData&quot;: &quot;${formStateData_1}&quot;,&#xd;
+                    &quot;versioningEnabled&quot;: false,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: null,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;formType&quot;: &quot;standard&quot;&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;type&quot;: &quot;Form&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Row1&quot;,&#xd;
+                    &quot;Row3&quot;,&#xd;
+                    &quot;Row12&quot;,&#xd;
+                    &quot;Row13&quot;,&#xd;
+                    &quot;Row14&quot;,&#xd;
+                    &quot;Row15&quot;,&#xd;
+                    &quot;Row16&quot;,&#xd;
+                    &quot;Row18&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;CheckBox1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;CheckBox1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;CheckBox1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;CheckBox1&quot;,&#xd;
+                    &quot;name&quot;: &quot;CheckBox1&quot;,&#xd;
+                    &quot;text&quot;: &quot;&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;value&quot;: true,&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;CheckBox&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;50e0c756-dee7-c7df-04bc-d515cab41221&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;CheckBox1&quot;,&#xd;
+                  &quot;type&quot;: &quot;CheckBox&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column15&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;TextBox1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;TextBox1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;TextBox1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;ML.TextBox1&quot;,&#xd;
+                    &quot;maxLength&quot;: 50,&#xd;
+                    &quot;name&quot;: &quot;TextBox1&quot;,&#xd;
+                    &quot;text&quot;: &quot;deneme&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;value&quot;: &quot;deneme&quot;,&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;placeholder&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;TextBox&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;1d7af6de-0968-6120-7c60-f8d057034a44&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;TextBox1&quot;,&#xd;
+                  &quot;type&quot;: &quot;TextBox&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column20&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column20&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row18&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Row20&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;ComboBox1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;items&quot;: [&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;7ca50a0f-4e15-6e8f-3ef7-0818ebc74136&quot;,&#xd;
+                        &quot;value&quot;: &quot;1&quot;,&#xd;
+                        &quot;text&quot;: &quot;Samsung&quot;,&#xd;
+                        &quot;selected&quot;: false&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;4940f041-665e-005a-658e-8c95fc6dc3ff&quot;,&#xd;
+                        &quot;value&quot;: &quot;2&quot;,&#xd;
+                        &quot;text&quot;: &quot;Apple&quot;,&#xd;
+                        &quot;selected&quot;: true&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;d1c02d74-a31f-7065-ff3e-af1b5176301a&quot;,&#xd;
+                        &quot;value&quot;: &quot;3&quot;,&#xd;
+                        &quot;text&quot;: &quot;Huawei&quot;,&#xd;
+                        &quot;selected&quot;: false&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;allowClear&quot;: true,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;dataSource&quot;: {&#xd;
+                      &quot;name&quot;: &quot;&quot;,&#xd;
+                      &quot;valueExpr&quot;: &quot;&quot;,&#xd;
+                      &quot;displayExpr&quot;: [&#xd;
+                        &#xd;
+                      ],&#xd;
+                      &quot;displayFormat&quot;: &quot;&quot;,&#xd;
+                      &quot;runAtServer&quot;: false,&#xd;
+                      &quot;parameters&quot;: [&#xd;
+                        &#xd;
+                      ]&#xd;
+                    },&#xd;
+                    &quot;showSearch&quot;: false,&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;ComboBox1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;ComboBox1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;SL.ComboBox1&quot;,&#xd;
+                    &quot;valueType&quot;: &quot;string&quot;,&#xd;
+                    &quot;name&quot;: &quot;ComboBox1&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;placeholder&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;ComboBox&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;c0091955-3e4b-b659-5f6b-30c85b841675&quot;,&#xd;
+                    &quot;sizeType&quot;: &quot;default&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0,&#xd;
+                    &quot;dataSourceType&quot;: &quot;static&quot;&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;ComboBox1&quot;,&#xd;
+                  &quot;type&quot;: &quot;ComboBox&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column3&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Radio1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;Radio1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;Radio1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;Radio1&quot;,&#xd;
+                    &quot;groupName&quot;: &quot;&quot;,&#xd;
+                    &quot;name&quot;: &quot;Radio1&quot;,&#xd;
+                    &quot;text&quot;: &quot;&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;value&quot;: true,&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;Radio&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;2e88947e-2e5b-e307-6a8e-ccd41b1b1ebf&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;Radio1&quot;,&#xd;
+                  &quot;type&quot;: &quot;Radio&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column13&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column12&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column12&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row12&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;ListBox1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row1&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row1&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column1&quot;,&#xd;
+                    &quot;Column2&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;TextArea1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;TextArea1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;TextArea1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;ML.TextArea1&quot;,&#xd;
+                    &quot;maxLength&quot;: 50,&#xd;
+                    &quot;name&quot;: &quot;TextArea1&quot;,&#xd;
+                    &quot;text&quot;: &quot;test&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;value&quot;: &quot;test&quot;,&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;placeholder&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;TextArea&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;b2e9353e-7f37-1906-1dfb-1ba0e1f55b06&quot;,&#xd;
+                    &quot;rows&quot;: 3,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;TextArea1&quot;,&#xd;
+                  &quot;type&quot;: &quot;TextArea&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column16&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column13&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column13&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row13&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Radio1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;RadioList1&quot;: {&#xd;
+                  &quot;properties&quot;: {&#xd;
+                    &quot;items&quot;: [&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;8f57779c-97dc-2550-5678-369dc5a20008&quot;,&#xd;
+                        &quot;value&quot;: &quot;1&quot;,&#xd;
+                        &quot;text&quot;: &quot;KadÄ±n&quot;,&#xd;
+                        &quot;selected&quot;: true&#xd;
+                      },&#xd;
+                      {&#xd;
+                        &quot;key&quot;: &quot;01611472-7eda-2015-21ef-60bcc18d9b3d&quot;,&#xd;
+                        &quot;value&quot;: &quot;2&quot;,&#xd;
+                        &quot;text&quot;: &quot;Erkek&quot;,&#xd;
+                        &quot;selected&quot;: false&#xd;
+                      }&#xd;
+                    ],&#xd;
+                    &quot;enabled&quot;: true,&#xd;
+                    &quot;readOnly&quot;: false,&#xd;
+                    &quot;allowClear&quot;: true,&#xd;
+                    &quot;clientEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;dataSource&quot;: {&#xd;
+                      &quot;name&quot;: &quot;&quot;,&#xd;
+                      &quot;valueExpr&quot;: &quot;&quot;,&#xd;
+                      &quot;displayExpr&quot;: [&#xd;
+                        &#xd;
+                      ],&#xd;
+                      &quot;displayFormat&quot;: &quot;&quot;,&#xd;
+                      &quot;runAtServer&quot;: false,&#xd;
+                      &quot;parameters&quot;: [&#xd;
+                        &#xd;
+                      ]&#xd;
+                    },&#xd;
+                    &quot;caption&quot;: {&#xd;
+                      &quot;text&quot;: {&#xd;
+                        &quot;tr-TR&quot;: &quot;RadioList1&quot;,&#xd;
+                        &quot;en-GB&quot;: &quot;RadioList1&quot;&#xd;
+                      },&#xd;
+                      &quot;position&quot;: &quot;left&quot;,&#xd;
+                      &quot;size&quot;: {&#xd;
+                        &quot;width&quot;: 120,&#xd;
+                        &quot;height&quot;: 27&#xd;
+                      },&#xd;
+                      &quot;font&quot;: {&#xd;
+                        &quot;family&quot;: &quot;Source Sans Pro, sans-serif&quot;,&#xd;
+                        &quot;size&quot;: &quot;12&quot;,&#xd;
+                        &quot;color&quot;: &quot;#777&quot;,&#xd;
+                        &quot;bold&quot;: true,&#xd;
+                        &quot;italic&quot;: false,&#xd;
+                        &quot;underline&quot;: false,&#xd;
+                        &quot;strikethrough&quot;: false&#xd;
+                      },&#xd;
+                      &quot;visible&quot;: true,&#xd;
+                      &quot;ellipsis&quot;: true,&#xd;
+                      &quot;horizontalAlign&quot;: &quot;left&quot;,&#xd;
+                      &quot;verticalAlign&quot;: &quot;middle&quot;,&#xd;
+                      &quot;style&quot;: {&#xd;
+                        &quot;padding&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                        &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                        &quot;height&quot;: null&#xd;
+                      },&#xd;
+                      &quot;markSettings&quot;: {&#xd;
+                        &quot;char&quot;: &quot;&quot;,&#xd;
+                        &quot;position&quot;: &quot;atFirst&quot;,&#xd;
+                        &quot;style&quot;: {&#xd;
+                          &quot;padding&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                          &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                          &quot;height&quot;: null&#xd;
+                        }&#xd;
+                      },&#xd;
+                      &quot;showColon&quot;: false&#xd;
+                    },&#xd;
+                    &quot;clientVisible&quot;: true,&#xd;
+                    &quot;EntityPath&quot;: &quot;SL.RadioList1&quot;,&#xd;
+                    &quot;valueType&quot;: &quot;string&quot;,&#xd;
+                    &quot;name&quot;: &quot;RadioList1&quot;,&#xd;
+                    &quot;containerStyle&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;style&quot;: {&#xd;
+                      &quot;padding&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundColor&quot;: &quot;&quot;,&#xd;
+                      &quot;backgroundImage&quot;: &quot;&quot;,&#xd;
+                      &quot;height&quot;: null&#xd;
+                    },&#xd;
+                    &quot;visible&quot;: true,&#xd;
+                    &quot;placeholder&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;clientEnabled&quot;: true,&#xd;
+                    &quot;controlType&quot;: &quot;RadioList&quot;,&#xd;
+                    &quot;title&quot;: {&#xd;
+                      &#xd;
+                    },&#xd;
+                    &quot;controlId&quot;: &quot;0d90351a-3591-af08-4f7a-0aeecce3416c&quot;,&#xd;
+                    &quot;sizeType&quot;: &quot;default&quot;,&#xd;
+                    &quot;serverEvents&quot;: [&#xd;
+                      &#xd;
+                    ],&#xd;
+                    &quot;tabIndex&quot;: 0,&#xd;
+                    &quot;dataSourceType&quot;: &quot;static&quot;,&#xd;
+                    &quot;direction&quot;: &quot;vertical&quot;&#xd;
+                  },&#xd;
+                  &quot;id&quot;: &quot;RadioList1&quot;,&#xd;
+                  &quot;type&quot;: &quot;RadioList&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column14&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row20&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row20&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column20&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row2&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row2&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column2&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column14&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column14&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row14&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;RadioList1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row3&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row3&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column3&quot;,&#xd;
+                    &quot;Column4&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column15&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column15&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row15&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;CheckBox1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row4&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row4&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: false&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Column4&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column16&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column16&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row16&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;TextArea1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row12&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row12&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column12&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column1&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column1&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;TextBox1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row13&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row13&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column13&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column2&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column2&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Row2&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column18&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column18&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row18&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;DateTimePicker1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row14&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row14&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column14&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column3&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column3&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row3&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;ComboBox1&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column19&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column19&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row16&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Row19&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row15&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row15&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column15&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Column4&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Column4&quot;,&#xd;
+                  &quot;type&quot;: &quot;Column&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Row3&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Row4&quot;&#xd;
+                  ]&#xd;
+                },&#xd;
+                &quot;Row16&quot;: {&#xd;
+                  &quot;properties&quot;: null,&#xd;
+                  &quot;id&quot;: &quot;Row16&quot;,&#xd;
+                  &quot;type&quot;: &quot;Row&quot;,&#xd;
+                  &quot;designerProps&quot;: {&#xd;
+                    &quot;allowAutoClear&quot;: true&#xd;
+                  },&#xd;
+                  &quot;parentId&quot;: &quot;Form1&quot;,&#xd;
+                  &quot;items&quot;: [&#xd;
+                    &quot;Column16&quot;,&#xd;
+                    &quot;Column19&quot;&#xd;
+                  ]&#xd;
+                }&#xd;
+              }&#xd;
+            },&#xd;
+            &quot;result&quot;: [&#xd;
+              &quot;Form1&quot;&#xd;
+            ]&#xd;
+          }&#xd;
+        },&#xd;
+        &quot;documentId&quot;: 40&#xd;
+      }&#xd;
+    }&#xd;
+  ]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/SaveAndContinue</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetFlowHistory" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;processId&quot;:${processid_1}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${clientUrl_1}/${flowName_1}/GetFlowHistory</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-encrypted-data</stringProp>
+                  <stringProp name="Header.value">${BimserEncryptedData2}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Bearer ${token_1}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">bimser-language</stringProp>
+                  <stringProp name="Header.value">tr-TR</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">1000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.gui.JSONFormatterGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonformatter.JSONFormatter" testname="jp@gc - JSON Format Post Processor" enabled="true"/>
+            <hashTree/>
+          </hashTree>
+          <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugSampler>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
